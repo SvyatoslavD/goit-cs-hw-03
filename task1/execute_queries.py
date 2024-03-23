@@ -88,8 +88,8 @@ def get_tasks_without_description():
 def get_users_with_tasks_in_progress():
     query = """
     SELECT users.*, tasks.* FROM users
-    JOIN tasks ON users.id = tasks.user_id
-    JOIN status ON tasks.status_id = status.id
+    INNER JOIN tasks ON users.id = tasks.user_id
+    INNER JOIN status ON tasks.status_id = status.id
     WHERE status.name = 'in progress';
     """
     cursor.execute(query)
