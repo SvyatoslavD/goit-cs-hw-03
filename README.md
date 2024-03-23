@@ -22,3 +22,14 @@ python execute_queries.py
 
 ## Task 02
 
+``` bash
+
+cd task2
+
+sudo docker run --name hw03_mongodb -d -p 27017:27017 mongo
+
+python create_db.py
+
+python main.py
+
+```
